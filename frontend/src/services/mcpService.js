@@ -12,11 +12,12 @@ export function getTraits() {
   return traits;
 }
 
-export function calculateScores(questionList, answers) {
+export function calculateRawScores(questionList, answers) {
   const scores = Object.fromEntries(traitIds.map((trait) => [trait, 0]));
 
   for (const question of questionList) {
-    const choice = question.choices.find((item) => item.id === answers[question.id]);
+    const selectedChoiceId = answers[question.id];
+    const choice = question.choices.find((item) => item.id === selectedChoiceId);
     if (!choice) continue;
 
     for (const [trait, value] of Object.entries(choice.scores)) {
@@ -27,19 +28,79 @@ export function calculateScores(questionList, answers) {
   return scores;
 }
 
-export function findMatchingFigure(scores) {
-  return figures
-    .map((figure) => {
-      const distance = traitIds.reduce((sum, trait) => {
-        return sum + Math.abs((scores[trait] ?? 0) - (figure.traits[trait] ?? 0));
-      }, 0);
+export function calculateMaximumScores(questionList) {
+  const maximumScores = Object.fromEntries(traitIds.map((trait) => [trait, 0]));
 
-      return { ...figure, distance };
-    })
-    .sort((a, b) => a.distance - b.distance || a.name.localeCompare(b.name, "ko"))[0];
+  for (const question of questionList) {
+    for (const trait of traitIds) {
+      const choiceScores = question.choices.map((choice) => choice.scores[trait] ?? 0);
+      maximumScores[trait] += Math.max(...choiceScores);
+    }
+  }
+
+  return maximumScores;
 }
 
-export function generateResult(figure, scores) {
+export function normalizeScores(rawScores, maximumScores) {
+  return Object.fromEntries(
+    traitIds.map((trait) => {
+      const maximum = maximumScores[trait];
+      const score = maximum === 0 ? 0 : Number(((rawScores[trait] / maximum) * 10).toFixed(2));
+      return [trait, score];
+    })
+  );
+}
+
+export function calculateScores(questionList, answers) {
+  const rawScores = calculateRawScores(questionList, answers);
+  const maximumScores = calculateMaximumScores(questionList);
+  return normalizeScores(rawScores, maximumScores);
+}
+
+function calculateDistance(userTraits, figureTraits) {
+  const sum = traitIds.reduce((total, trait) => {
+    const difference = (userTraits[trait] ?? 0) - (figureTraits[trait] ?? 0);
+    return total + difference ** 2;
+  }, 0);
+
+  return Math.sqrt(sum);
+}
+
+function getTopTraitIds(scoreMap, count = 3) {
+  return Object.entries(scoreMap)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, count)
+    .map(([trait]) => trait);
+}
+
+function calculateTopTraitBonus(userTraits, figureTraits) {
+  const userTopTraits = getTopTraitIds(userTraits);
+  const figureTopTraits = getTopTraitIds(figureTraits);
+  const overlapCount = userTopTraits.filter((trait) => figureTopTraits.includes(trait)).length;
+
+  return overlapCount * 0.8;
+}
+
+export function findMatchingFigure(userTraits) {
+  const ranking = figures
+    .map((figure) => {
+      const distance = calculateDistance(userTraits, figure.traits);
+      const topTraitBonus = calculateTopTraitBonus(userTraits, figure.traits);
+      const finalDistance = distance - topTraitBonus;
+
+      return { ...figure, distance, topTraitBonus, finalDistance };
+    })
+    .sort((a, b) => a.finalDistance - b.finalDistance || a.name.localeCompare(b.name, "ko"));
+
+  return {
+    bestMatch: ranking[0],
+    alternatives: ranking.slice(1, 3),
+    ranking
+  };
+}
+
+export function generateResult(matchResult, scores) {
+  const figure = matchResult.bestMatch ?? matchResult;
   const topTraits = Object.entries(scores)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 3)
@@ -47,6 +108,7 @@ export function generateResult(figure, scores) {
 
   return {
     figure,
+    alternatives: matchResult.alternatives ?? [],
     scores,
     topTraits,
     title: `당신은 조선의 ${figure.name}형 ${figure.role}`,
@@ -57,7 +119,18 @@ export function generateResult(figure, scores) {
 }
 
 export function runJoseonMatch(answers) {
-  const scores = calculateScores(questions, answers);
-  const figure = findMatchingFigure(scores);
-  return generateResult(figure, scores);
+  if (Object.keys(answers).length !== questions.length) {
+    throw new Error("모든 질문에 답해야 합니다.");
+  }
+
+  const rawScores = calculateRawScores(questions, answers);
+  const maximumScores = calculateMaximumScores(questions);
+  const normalizedScores = normalizeScores(rawScores, maximumScores);
+  const matchResult = findMatchingFigure(normalizedScores);
+
+  return {
+    rawScores,
+    maximumScores,
+    ...generateResult(matchResult, normalizedScores)
+  };
 }

@@ -5,6 +5,6 @@
   { "id": "creativity", "name": "창의성" },
   { "id": "empathy", "name": "공감 능력" },
   { "id": "practicality", "name": "현실 감각" },
-  { "id": "power", "name": "권력 지향" },
+  { "id": "power", "name": "영향력" },
   { "id": "honor", "name": "명예 지향" }
 ]

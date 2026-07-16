@@ -4,8 +4,22 @@
     "situation": "과거시험 하루 전, 실제 시험에 나올 가능성이 높은 문제를 우연히 입수했다.",
     "text": "당신의 선택은?",
     "choices": [
-      { "id": "a", "label": "보지 않고 지금까지 준비한 실력으로 시험을 치른다.", "scores": { "honor": 3, "justice": 2 } },
-      { "id": "b", "label": "출처를 확인한 뒤 시험 준비에 참고한다.", "scores": { "practicality": 3, "curiosity": 1 } }
+      {
+        "id": "A",
+        "label": "보지 않고 지금까지 준비한 실력으로 시험을 치른다.",
+        "scores": {
+          "justice": 3,
+          "honor": 2
+        }
+      },
+      {
+        "id": "B",
+        "label": "출처를 확인한 뒤 시험 준비에 참고한다.",
+        "scores": {
+          "practicality": 3,
+          "curiosity": 2
+        }
+      }
     ]
   },
   {
@@ -13,8 +27,23 @@
     "situation": "새로운 농기구가 개발되었지만 마을 사람들은 대부분 사용을 꺼린다.",
     "text": "당신의 선택은?",
     "choices": [
-      { "id": "a", "label": "직접 사용해본 뒤 효과를 증명해 보인다.", "scores": { "creativity": 2, "curiosity": 2, "practicality": 1 } },
-      { "id": "b", "label": "기존 방식도 충분하니 굳이 바꿀 필요는 없다고 생각한다.", "scores": { "practicality": 2, "honor": 1 } }
+      {
+        "id": "A",
+        "label": "직접 사용해본 뒤 효과를 증명해 보인다.",
+        "scores": {
+          "creativity": 3,
+          "curiosity": 2,
+          "practicality": 1
+        }
+      },
+      {
+        "id": "B",
+        "label": "기존 방식도 충분하니 굳이 바꿀 필요는 없다고 생각한다.",
+        "scores": {
+          "practicality": 3,
+          "empathy": 1
+        }
+      }
     ]
   },
   {
@@ -22,8 +51,24 @@
     "situation": "왕이 내린 정책이 백성들에게 피해를 줄 것 같다는 사실을 알게 되었다.",
     "text": "당신의 선택은?",
     "choices": [
-      { "id": "a", "label": "불이익을 감수하고라도 의견을 올린다.", "scores": { "justice": 3, "honor": 2 } },
-      { "id": "b", "label": "더 확실한 근거가 모일 때까지 기다린다.", "scores": { "practicality": 2, "curiosity": 2 } }
+      {
+        "id": "A",
+        "label": "불이익을 감수하고라도 의견을 올린다.",
+        "scores": {
+          "justice": 3,
+          "honor": 2,
+          "power": 1
+        }
+      },
+      {
+        "id": "B",
+        "label": "더 확실한 근거가 모일 때까지 기다린다.",
+        "scores": {
+          "practicality": 3,
+          "curiosity": 1,
+          "empathy": 1
+        }
+      }
     ]
   },
   {
@@ -31,8 +76,22 @@
     "situation": "지도에도 없는 산길 너머에 새로운 마을이 있다는 소문을 들었다.",
     "text": "당신의 선택은?",
     "choices": [
-      { "id": "a", "label": "직접 확인하러 떠난다.", "scores": { "adventure": 3, "curiosity": 2 } },
-      { "id": "b", "label": "다녀온 사람들의 이야기를 먼저 모아본다.", "scores": { "curiosity": 2, "practicality": 2 } }
+      {
+        "id": "A",
+        "label": "직접 확인하러 떠난다.",
+        "scores": {
+          "adventure": 3,
+          "curiosity": 2
+        }
+      },
+      {
+        "id": "B",
+        "label": "다녀온 사람들의 이야기를 먼저 모아본다.",
+        "scores": {
+          "practicality": 3,
+          "curiosity": 2
+        }
+      }
     ]
   },
   {
@@ -40,8 +99,23 @@
     "situation": "전쟁이 시작되었다. 당신에게 후방의 안전한 직책과 최전선의 지휘관 자리가 동시에 제안되었다.",
     "text": "당신의 선택은?",
     "choices": [
-      { "id": "a", "label": "후방에서 물자와 정보를 관리한다.", "scores": { "practicality": 3, "power": 1 } },
-      { "id": "b", "label": "직접 최전선으로 나간다.", "scores": { "adventure": 2, "honor": 2, "power": 1 } }
+      {
+        "id": "A",
+        "label": "후방에서 물자와 정보를 관리한다.",
+        "scores": {
+          "practicality": 3,
+          "empathy": 2
+        }
+      },
+      {
+        "id": "B",
+        "label": "직접 최전선으로 나간다.",
+        "scores": {
+          "adventure": 3,
+          "honor": 2,
+          "justice": 1
+        }
+      }
     ]
   },
   {
@@ -49,8 +123,22 @@
     "situation": "시장에 나가 보니 같은 물건인데 가게마다 가격이 다르다.",
     "text": "당신의 선택은?",
     "choices": [
-      { "id": "a", "label": "왜 차이가 나는지 원인을 조사한다.", "scores": { "curiosity": 3, "practicality": 1 } },
-      { "id": "b", "label": "가장 이득이 되는 곳을 이용한다.", "scores": { "practicality": 3, "power": 1 } }
+      {
+        "id": "A",
+        "label": "왜 차이가 나는지 원인을 조사한다.",
+        "scores": {
+          "curiosity": 3,
+          "practicality": 1
+        }
+      },
+      {
+        "id": "B",
+        "label": "가장 이득이 되는 곳을 이용한다.",
+        "scores": {
+          "practicality": 3,
+          "power": 1
+        }
+      }
     ]
   },
   {
@@ -58,8 +146,24 @@
     "situation": "친한 친구가 억울한 누명을 쓰게 되었다.",
     "text": "당신의 선택은?",
     "choices": [
-      { "id": "a", "label": "진실을 밝히기 위해 직접 움직인다.", "scores": { "justice": 3, "empathy": 1, "adventure": 1 } },
-      { "id": "b", "label": "감정적으로 나서지 않고 증거부터 모은다.", "scores": { "curiosity": 2, "practicality": 2 } }
+      {
+        "id": "A",
+        "label": "진실을 밝히기 위해 직접 움직인다.",
+        "scores": {
+          "justice": 3,
+          "empathy": 2,
+          "adventure": 1
+        }
+      },
+      {
+        "id": "B",
+        "label": "감정적으로 나서지 않고 증거부터 모은다.",
+        "scores": {
+          "practicality": 3,
+          "curiosity": 2,
+          "justice": 1
+        }
+      }
     ]
   },
   {
@@ -67,8 +171,23 @@
     "situation": "어려운 책 한 권과 사람들에게 인기 많은 책 열 권 중 하나를 고를 수 있다.",
     "text": "당신의 선택은?",
     "choices": [
-      { "id": "a", "label": "어려운 책 한 권을 선택한다.", "scores": { "curiosity": 3, "honor": 1 } },
-      { "id": "b", "label": "사람들이 많이 읽는 책 열 권을 선택한다.", "scores": { "empathy": 2, "practicality": 1, "creativity": 1 } }
+      {
+        "id": "A",
+        "label": "어려운 책 한 권을 선택한다.",
+        "scores": {
+          "curiosity": 3,
+          "honor": 1
+        }
+      },
+      {
+        "id": "B",
+        "label": "사람들이 많이 읽는 책 열 권을 선택한다.",
+        "scores": {
+          "empathy": 2,
+          "creativity": 2,
+          "practicality": 1
+        }
+      }
     ]
   },
   {
@@ -76,8 +195,22 @@
     "situation": "당신의 업적으로 큰 상을 받을 기회가 생겼다.",
     "text": "당신의 선택은?",
     "choices": [
-      { "id": "a", "label": "상보다 실제 성과가 더 중요하다고 생각한다.", "scores": { "practicality": 3, "honor": 1 } },
-      { "id": "b", "label": "기회가 왔을 때 인정받는 것도 중요하다고 생각한다.", "scores": { "honor": 2, "power": 2 } }
+      {
+        "id": "A",
+        "label": "상보다 실제 성과가 더 중요하다고 생각한다.",
+        "scores": {
+          "practicality": 3,
+          "justice": 1
+        }
+      },
+      {
+        "id": "B",
+        "label": "기회가 왔을 때 인정받는 것도 중요하다고 생각한다.",
+        "scores": {
+          "honor": 3,
+          "power": 2
+        }
+      }
     ]
   },
   {
@@ -85,8 +218,23 @@
     "situation": "새로운 발명품 아이디어가 떠올랐다.",
     "text": "당신의 선택은?",
     "choices": [
-      { "id": "a", "label": "실패하더라도 직접 만들어 본다.", "scores": { "creativity": 3, "adventure": 1, "curiosity": 1 } },
-      { "id": "b", "label": "먼저 주변 사람들의 의견을 들어본다.", "scores": { "empathy": 2, "practicality": 2 } }
+      {
+        "id": "A",
+        "label": "실패하더라도 직접 만들어 본다.",
+        "scores": {
+          "creativity": 3,
+          "adventure": 2,
+          "curiosity": 1
+        }
+      },
+      {
+        "id": "B",
+        "label": "먼저 주변 사람들의 의견을 들어본다.",
+        "scores": {
+          "practicality": 3,
+          "empathy": 2
+        }
+      }
     ]
   },
   {
@@ -94,8 +242,23 @@
     "situation": "왕이 해외 사절단을 모집한다. 몇 년 동안 고향으로 돌아오지 못할 수도 있다.",
     "text": "당신의 선택은?",
     "choices": [
-      { "id": "a", "label": "새로운 세상을 보기 위해 지원한다.", "scores": { "adventure": 3, "curiosity": 2 } },
-      { "id": "b", "label": "익숙한 곳에서 맡은 일을 이어간다.", "scores": { "practicality": 2, "honor": 2 } }
+      {
+        "id": "A",
+        "label": "새로운 세상을 보기 위해 지원한다.",
+        "scores": {
+          "adventure": 3,
+          "curiosity": 2,
+          "honor": 1
+        }
+      },
+      {
+        "id": "B",
+        "label": "익숙한 곳에서 맡은 일을 이어간다.",
+        "scores": {
+          "practicality": 3,
+          "empathy": 2
+        }
+      }
     ]
   },
   {
@@ -103,8 +266,24 @@
     "situation": "마을 아이들이 공부보다 놀이를 더 좋아한다.",
     "text": "당신의 선택은?",
     "choices": [
-      { "id": "a", "label": "흥미를 느낄 수 있는 새로운 방법을 찾는다.", "scores": { "creativity": 3, "empathy": 2 } },
-      { "id": "b", "label": "기본 규칙부터 철저히 익히게 한다.", "scores": { "honor": 2, "practicality": 2, "power": 1 } }
+      {
+        "id": "A",
+        "label": "흥미를 느낄 수 있는 새로운 방법을 찾는다.",
+        "scores": {
+          "creativity": 3,
+          "empathy": 2,
+          "curiosity": 1
+        }
+      },
+      {
+        "id": "B",
+        "label": "기본 규칙부터 철저히 익히게 한다.",
+        "scores": {
+          "practicality": 3,
+          "power": 1,
+          "honor": 1
+        }
+      }
     ]
   },
   {
@@ -112,8 +291,23 @@
     "situation": "관청 문서에서 작은 오류를 발견했다. 아무도 눈치채지 못한 상태다.",
     "text": "당신의 선택은?",
     "choices": [
-      { "id": "a", "label": "번거롭더라도 바로 수정한다.", "scores": { "justice": 2, "honor": 2, "practicality": 1 } },
-      { "id": "b", "label": "큰 문제가 아니라면 그대로 둔다.", "scores": { "practicality": 2, "power": 1 } }
+      {
+        "id": "A",
+        "label": "번거롭더라도 바로 수정한다.",
+        "scores": {
+          "practicality": 3,
+          "justice": 2,
+          "honor": 1
+        }
+      },
+      {
+        "id": "B",
+        "label": "큰 문제가 아니라면 그대로 둔다.",
+        "scores": {
+          "practicality": 2,
+          "power": 1
+        }
+      }
     ]
   },
   {
@@ -121,8 +315,23 @@
     "situation": "수많은 사람들 앞에서 자신의 생각을 발표할 기회가 생겼다.",
     "text": "당신의 선택은?",
     "choices": [
-      { "id": "a", "label": "영향력을 얻을 수 있으니 나선다.", "scores": { "power": 3, "honor": 1, "adventure": 1 } },
-      { "id": "b", "label": "꼭 내가 아니어도 된다면 다른 사람에게 양보한다.", "scores": { "empathy": 3, "honor": 1 } }
+      {
+        "id": "A",
+        "label": "영향력을 얻을 수 있으니 나선다.",
+        "scores": {
+          "power": 3,
+          "honor": 2,
+          "adventure": 1
+        }
+      },
+      {
+        "id": "B",
+        "label": "꼭 내가 아니어도 된다면 다른 사람에게 양보한다.",
+        "scores": {
+          "empathy": 3,
+          "practicality": 1
+        }
+      }
     ]
   },
   {
@@ -130,8 +339,23 @@
     "situation": "역사책에 이름을 남길 수 있는 길과 소중한 사람들과 평범하게 살아가는 길이 있다.",
     "text": "당신의 선택은?",
     "choices": [
-      { "id": "a", "label": "역사에 이름을 남기는 길을 선택한다.", "scores": { "honor": 3, "power": 2 } },
-      { "id": "b", "label": "평범하지만 소중한 삶을 선택한다.", "scores": { "empathy": 3, "practicality": 1 } }
+      {
+        "id": "A",
+        "label": "역사에 이름을 남기는 길을 선택한다.",
+        "scores": {
+          "honor": 3,
+          "power": 2,
+          "adventure": 1
+        }
+      },
+      {
+        "id": "B",
+        "label": "평범하지만 소중한 삶을 선택한다.",
+        "scores": {
+          "empathy": 3,
+          "practicality": 2
+        }
+      }
     ]
   }
 ]

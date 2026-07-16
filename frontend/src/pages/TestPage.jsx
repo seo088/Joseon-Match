@@ -8,7 +8,8 @@ const storageKey = "joseon-match:answers";
 
 function loadAnswers() {
   try {
-    return JSON.parse(window.localStorage.getItem(storageKey)) ?? {};
+    const savedAnswers = JSON.parse(window.localStorage.getItem(storageKey)) ?? {};
+    return Object.fromEntries(Object.entries(savedAnswers).map(([questionId, choiceId]) => [questionId, String(choiceId).toUpperCase()]));
   } catch {
     return {};
   }

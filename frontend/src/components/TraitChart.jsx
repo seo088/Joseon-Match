@@ -12,7 +12,7 @@ export default function TraitChart({ scores }) {
       <ResponsiveContainer height={280} width="100%">
         <BarChart data={data} layout="vertical" margin={{ left: 28, right: 16 }}>
           <CartesianGrid horizontal={false} stroke="#e6d8bd" />
-          <XAxis allowDecimals={false} domain={[0, 12]} type="number" />
+          <XAxis allowDecimals={false} domain={[0, 10]} type="number" />
           <YAxis dataKey="name" type="category" width={76} />
           <Tooltip />
           <Bar dataKey="score" fill="#9d2f22" radius={[0, 6, 6, 0]} />

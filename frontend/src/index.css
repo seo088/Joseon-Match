@@ -33,6 +33,7 @@
 body {
   min-width: 320px;
   margin: 0;
+  overflow-x: hidden;
 }
 
 button {
@@ -657,11 +658,23 @@ button {
 
 @media (max-width: 720px) {
   .app-shell {
-    padding: 10px;
+    padding: 8px;
   }
 
   .story-hero {
     min-height: calc(100vh - 20px);
+    gap: 14px;
+    padding: 34px 14px 28px;
+  }
+
+  .story-hero h1 {
+    font-size: clamp(38px, 14vw, 58px);
+    line-height: 1.12;
+  }
+
+  .story-hero p:not(.eyebrow) {
+    font-size: 18px;
+    line-height: 1.65;
   }
 
   .story-hero .seal,
@@ -675,19 +688,77 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .test-layout {
+    padding: 16px 12px;
+  }
+
+  .test-heading {
+    font-size: 18px;
+  }
+
+  .question-card {
+    padding: 10px 0 6px;
+  }
+
+  .situation-box {
+    margin-bottom: 18px;
+    border-left-width: 5px;
+    border-radius: 14px 20px 20px 14px;
+    padding: 18px 16px;
+  }
+
+  .situation-box span {
+    font-size: 19px;
+  }
+
+  .situation-box p {
+    font-size: 22px;
+    line-height: 1.62;
+  }
+
+  .question-card h2 {
+    margin-bottom: 18px;
+    font-size: clamp(34px, 12vw, 44px);
+  }
+
   .choice-button {
     grid-template-columns: 44px 1fr;
     min-height: 94px;
-    padding: 18px;
+    gap: 12px;
+    border-radius: 18px 12px 18px 12px;
+    padding: 18px 16px;
   }
 
   .choice-button span {
     width: 38px;
     height: 38px;
+    font-size: 17px;
+  }
+
+  .choice-button strong {
+    font-size: 24px;
+    line-height: 1.45;
   }
 
   .hero-figures {
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: end;
+    gap: 8px;
+    width: 100%;
+    max-width: 520px;
+    padding: 0 2px;
+  }
+
+  .figure-avatar.small,
+  .figure-avatar.large {
+    width: 100%;
+    max-width: 112px;
+    justify-self: center;
+  }
+
+  .figure-avatar.large {
+    max-width: 132px;
   }
 
   .figure-avatar.result {
@@ -703,12 +774,156 @@ button {
     display: none;
   }
 
+  .result-layout {
+    width: 100%;
+  }
+
+  .result-card {
+    gap: 16px;
+    padding: 18px 12px;
+  }
+
+  .result-card::before {
+    inset: 8px;
+  }
+
+  .result-top {
+    gap: 16px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .result-card h2 {
+    font-size: clamp(30px, 11vw, 42px);
+    line-height: 1.2;
+  }
+
+  .result-card p,
+  .strength-list {
+    font-size: 19px;
+    line-height: 1.6;
+  }
+
+  .result-section {
+    padding: 16px 14px;
+  }
+
+  .result-section h3 {
+    font-size: 25px;
+  }
+
+  .stamp-line {
+    justify-content: center;
+  }
+
+  .stamp-line span {
+    font-size: 18px;
+  }
+
+  .trait-chart {
+    min-height: 320px;
+    padding: 12px 0;
+  }
+
   .test-actions {
+    flex-direction: column;
     justify-content: stretch;
   }
 
   .primary-button,
   .secondary-button {
     width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+  :root {
+    font-size: 17px;
+  }
+
+  .story-hero {
+    min-height: auto;
+  }
+
+  .story-hero h1 {
+    font-size: clamp(34px, 13vw, 48px);
+  }
+
+  .story-hero p:not(.eyebrow) {
+    font-size: 17px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    min-height: 52px;
+    font-size: 20px;
+  }
+
+  .hero-figures {
+    gap: 6px;
+  }
+
+  .figure-avatar.small,
+  .figure-avatar.large {
+    max-width: 82px;
+  }
+
+  .figure-avatar.large {
+    max-width: 96px;
+  }
+
+  .test-layout {
+    padding: 14px 10px;
+  }
+
+  .progress {
+    height: 10px;
+    margin-bottom: 18px;
+  }
+
+  .situation-box p {
+    font-size: 20px;
+  }
+
+  .question-card h2 {
+    font-size: clamp(31px, 11vw, 38px);
+  }
+
+  .choice-button {
+    grid-template-columns: 38px 1fr;
+    min-height: 88px;
+    padding: 16px 14px;
+  }
+
+  .choice-button span {
+    width: 34px;
+    height: 34px;
+  }
+
+  .choice-button strong {
+    font-size: 22px;
+  }
+
+  .figure-avatar.result.has-image {
+    width: min(190px, 100%);
+    height: 230px;
+  }
+
+  .result-card {
+    padding: 16px 10px;
+  }
+
+  .result-section {
+    padding: 15px 12px;
+  }
+
+  .result-card p,
+  .strength-list {
+    font-size: 18px;
+  }
+
+  .chart-note,
+  .result-disclaimer {
+    font-size: 16px;
   }
 }

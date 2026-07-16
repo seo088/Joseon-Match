@@ -22,7 +22,7 @@ async function main() {
   });
 
   const client = new Client({
-    name: "campus-study-planner-harness",
+    name: "joseon-career-oracle-harness",
     version: "1.0.0"
   });
 
@@ -32,69 +32,57 @@ async function main() {
     const tools = await client.listTools();
     const toolNames = tools.tools.map((tool) => tool.name).sort();
     assert.deepEqual(toolNames, [
-      "check_submission_ready",
-      "list_assignments",
-      "plan_study_week"
+      "analyze_user_profile",
+      "generate_questionnaire",
+      "match_joseon_role"
     ]);
 
     const resources = await client.listResources();
     const resourceUris = resources.resources.map((resource) => resource.uri).sort();
     assert.deepEqual(resourceUris, [
-      "campus://assignments",
-      "campus://courses",
-      "campus://grading-rubric"
+      "joseon://project-plan",
+      "joseon://role-seed"
     ]);
 
     const prompts = await client.listPrompts();
     const promptNames = prompts.prompts.map((prompt) => prompt.name).sort();
     assert.deepEqual(promptNames, [
-      "assignment_breakdown",
-      "weekly_study_coach"
+      "profile_interview",
+      "result_writer"
     ]);
 
-    const assignmentsResource = await client.readResource({ uri: "campus://assignments" });
-    const assignments = JSON.parse(assignmentsResource.contents[0].text);
-    assert.equal(assignments[0].id, "mcp-demo");
+    const roleSeedResource = await client.readResource({ uri: "joseon://role-seed" });
+    const roles = JSON.parse(roleSeedResource.contents[0].text);
+    assert.equal(roles[0].id, "jeongisu");
 
-    const listed = parseTextJson(await client.callTool({
-      name: "list_assignments",
-      arguments: { status: "in-progress", daysAhead: 14, today: "2026-07-16" }
+    const analysis = parseTextJson(await client.callTool({
+      name: "analyze_user_profile",
+      arguments: { userText: "나는 사람 만나는 걸 좋아하고 말로 설득하는 게 자신 있어." }
     }));
-    assert.equal(listed.length, 1);
-    assert.equal(listed[0].title, "Codex 기반 MCP 프로젝트 구축 및 시연");
+    assert.equal(analysis.status, "setup-only");
 
-    const weeklyPlan = parseTextJson(await client.callTool({
-      name: "plan_study_week",
-      arguments: { availableHours: 12, today: "2026-07-16" }
+    const match = parseTextJson(await client.callTool({
+      name: "match_joseon_role",
+      arguments: { keywords: ["설득", "사교성"] }
     }));
-    assert.ok(weeklyPlan[0].recommendedHours >= 1);
-    assert.equal(weeklyPlan[0].assignmentId, "mcp-demo");
+    assert.equal(match.status, "setup-only");
 
-    const readiness = parseTextJson(await client.callTool({
-      name: "check_submission_ready",
-      arguments: {
-        assignmentId: "mcp-demo",
-        completedItems: [
-          "개별 주제 선정",
-          "MCP Tool 구현",
-          "MCP Resource 구현"
-        ]
-      }
+    const questionnaire = parseTextJson(await client.callTool({
+      name: "generate_questionnaire",
+      arguments: { count: 5 }
     }));
-    assert.equal(readiness.ready, false);
-    assert.ok(readiness.missingItems.includes("MCP Prompt 구현"));
+    assert.equal(questionnaire.status, "setup-only");
 
     const prompt = await client.getPrompt({
-      name: "assignment_breakdown",
+      name: "result_writer",
       arguments: {
-        assignmentTitle: "Codex 기반 MCP 프로젝트 구축 및 시연",
-        dueDate: "2026-07-22",
-        remainingHours: "5"
+        roleName: "전기수",
+        reason: "사람을 만나고 말로 설득하는 성향이 강합니다."
       }
     });
-    assert.match(prompt.messages[0].content.text, /작업을 쪼개고/);
+    assert.match(prompt.messages[0].content.text, /전기수/);
 
-    console.log("MCP Harness 검증 통과");
+    console.log("조선시대 직업 테스트 MCP 환경 검증 통과");
     console.log(`- Tools: ${toolNames.join(", ")}`);
     console.log(`- Resources: ${resourceUris.join(", ")}`);
     console.log(`- Prompts: ${promptNames.join(", ")}`);
@@ -104,7 +92,7 @@ async function main() {
 }
 
 main().catch((error) => {
-  console.error("MCP Harness 검증 실패");
+  console.error("조선시대 직업 테스트 MCP 환경 검증 실패");
   console.error(error);
   process.exitCode = 1;
 });

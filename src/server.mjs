@@ -2,21 +2,19 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { fileURLToPath } from "node:url";
 import * as z from "zod/v4";
-import { assignments, courses, gradingRubric } from "./campusData.mjs";
-import { checkSubmissionReady, listAssignments, planStudyWeek } from "./planner.mjs";
 
 export function createServer() {
   const server = new McpServer({
-    name: "campus-study-planner",
+    name: "joseon-career-oracle",
     version: "1.0.0"
   });
 
   server.registerResource(
-    "courses",
-    "campus://courses",
+    "project-plan",
+    "joseon://project-plan",
     {
-      title: "수강 과목 목록",
-      description: "과제 계획에 사용할 수강 과목과 주간 학습 시간 정보",
+      title: "프로젝트 구현 계획",
+      description: "현대판 조선시대 직업/관상 테스트 MCP의 구현 범위와 단계",
       mimeType: "application/json"
     },
     async (uri) => ({
@@ -24,18 +22,41 @@ export function createServer() {
         {
           uri: uri.href,
           mimeType: "application/json",
-          text: JSON.stringify(courses, null, 2)
+          text: JSON.stringify({
+            topic: "현대판 조선시대 직업/관상 테스트",
+            flow: [
+              "사용자 고민 또는 관심사 입력",
+              "키워드와 성향 단서 추출",
+              "조선시대 직업군/인물 데이터와 매칭",
+              "결과 캐릭터, 이유, 추천 행동 출력"
+            ],
+            requiredMcpItems: {
+              tools: [
+                "analyze_user_profile",
+                "match_joseon_role",
+                "generate_questionnaire"
+              ],
+              resources: [
+                "joseon://role-seed",
+                "joseon://project-plan"
+              ],
+              prompts: [
+                "profile_interview",
+                "result_writer"
+              ]
+            }
+          }, null, 2)
         }
       ]
     })
   );
 
   server.registerResource(
-    "assignments",
-    "campus://assignments",
+    "role-seed",
+    "joseon://role-seed",
     {
-      title: "과제 목록",
-      description: "마감일, 우선순위, 체크리스트가 포함된 과제 데이터",
+      title: "조선시대 직업군 샘플 데이터",
+      description: "초기 개발과 Harness 검증에 사용할 직업군 샘플",
       mimeType: "application/json"
     },
     async (uri) => ({
@@ -43,111 +64,116 @@ export function createServer() {
         {
           uri: uri.href,
           mimeType: "application/json",
-          text: JSON.stringify(assignments, null, 2)
-        }
-      ]
-    })
-  );
-
-  server.registerResource(
-    "grading-rubric",
-    "campus://grading-rubric",
-    {
-      title: "제출 평가 기준",
-      description: "MCP 프로젝트 제출물의 자체 점검용 평가 기준",
-      mimeType: "application/json"
-    },
-    async (uri) => ({
-      contents: [
-        {
-          uri: uri.href,
-          mimeType: "application/json",
-          text: JSON.stringify(gradingRubric, null, 2)
-        }
-      ]
-    })
-  );
-
-  server.registerTool(
-    "list_assignments",
-    {
-      title: "과제 조회",
-      description: "상태, 과목, 기간 조건으로 과제 목록을 조회합니다.",
-      inputSchema: {
-        status: z.enum(["all", "todo", "in-progress", "done"]).default("all"),
-        courseId: z.string().default("all"),
-        daysAhead: z.number().int().min(1).max(365).default(30),
-        today: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).default("2026-07-16")
-      }
-    },
-    async (args) => ({
-      content: [
-        {
-          type: "text",
-          text: JSON.stringify(listAssignments(args), null, 2)
+          text: JSON.stringify([
+            {
+              id: "jeongisu",
+              name: "전기수",
+              summary: "저잣거리에서 이야기를 생생하게 읽어 주던 낭독가",
+              traits: ["표현력", "설득", "사교성", "이야기"]
+            },
+            {
+              id: "uigeumbu-dosa",
+              name: "의금부 도사",
+              summary: "사건의 실마리를 추적하고 질서를 바로잡던 관원",
+              traits: ["분석", "정의감", "집중력", "원칙"]
+            },
+            {
+              id: "hwawon",
+              name: "도화서 화원",
+              summary: "관청에서 그림과 기록 이미지를 담당하던 전문 화가",
+              traits: ["관찰", "창작", "미감", "섬세함"]
+            }
+          ], null, 2)
         }
       ]
     })
   );
 
   server.registerTool(
-    "plan_study_week",
+    "analyze_user_profile",
     {
-      title: "주간 학습 계획 생성",
-      description: "마감일과 우선순위를 기반으로 이번 주 권장 학습 시간을 배분합니다.",
+      title: "사용자 성향 분석",
+      description: "사용자 입력에서 관심사와 성향 키워드를 추출하는 자리 표시자 Tool입니다.",
       inputSchema: {
-        availableHours: z.number().int().min(1).max(80).default(10),
-        today: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).default("2026-07-16")
+        userText: z.string().min(1)
       }
     },
-    async (args) => ({
+    async ({ userText }) => ({
       content: [
         {
           type: "text",
-          text: JSON.stringify(planStudyWeek(args), null, 2)
+          text: JSON.stringify({
+            userText,
+            status: "setup-only",
+            message: "환경 세팅 단계입니다. 다음 단계에서 키워드 추출 로직을 구현합니다."
+          }, null, 2)
         }
       ]
     })
   );
 
   server.registerTool(
-    "check_submission_ready",
+    "match_joseon_role",
     {
-      title: "제출 준비도 점검",
-      description: "완료한 체크리스트를 기준으로 과제 제출 가능 여부를 확인합니다.",
+      title: "조선시대 직업 매칭",
+      description: "성향 키워드를 조선시대 직업군과 매칭하는 자리 표시자 Tool입니다.",
       inputSchema: {
-        assignmentId: z.string(),
-        completedItems: z.array(z.string()).default([])
+        keywords: z.array(z.string()).default([])
       }
     },
     async (args) => ({
       content: [
         {
           type: "text",
-          text: JSON.stringify(checkSubmissionReady(args), null, 2)
+          text: JSON.stringify({
+            keywords: args.keywords,
+            status: "setup-only",
+            message: "환경 세팅 단계입니다. 다음 단계에서 점수 기반 매칭 알고리즘을 구현합니다."
+          }, null, 2)
+        }
+      ]
+    })
+  );
+
+  server.registerTool(
+    "generate_questionnaire",
+    {
+      title: "간단 검사지 생성",
+      description: "AI 판단용 질문지를 생성하는 자리 표시자 Tool입니다.",
+      inputSchema: {
+        count: z.number().int().min(3).max(10).default(5)
+      }
+    },
+    async ({ count }) => ({
+      content: [
+        {
+          type: "text",
+          text: JSON.stringify({
+            count,
+            status: "setup-only",
+            message: "환경 세팅 단계입니다. 다음 단계에서 검사지 문항을 구현합니다."
+          }, null, 2)
         }
       ]
     })
   );
 
   server.registerPrompt(
-    "assignment_breakdown",
+    "profile_interview",
     {
-      title: "과제 분해 프롬프트",
-      description: "선택한 과제를 작은 실행 단계로 나누도록 요청하는 프롬프트입니다.",
+      title: "성향 인터뷰 프롬프트",
+      description: "사용자의 고민과 관심사를 끌어내는 인터뷰 프롬프트입니다.",
       argsSchema: {
-        assignmentTitle: z.string(),
-        dueDate: z.string(),
-        remainingHours: z.string().default("3")
+        topic: z.string().default("진로와 성향")
       }
     },
-    async ({ assignmentTitle, dueDate, remainingHours }) => ({
+    async ({ topic }) => ({
       messages: [
         {
           role: "user",
           content: {
             type: "text",
-            text: `${assignmentTitle} 과제를 ${dueDate}까지 끝내야 합니다. 남은 시간은 ${remainingHours}시간입니다. 제출 가능한 단위로 작업을 쪼개고, 우선순위와 검증 방법을 함께 제안해 주세요.`
+            text: `${topic}을 바탕으로 조선시대 직업군 매칭에 필요한 성향 질문 5개를 만들어 주세요. 질문은 짧고 답하기 쉬워야 합니다.`
           }
         }
       ]
@@ -155,22 +181,22 @@ export function createServer() {
   );
 
   server.registerPrompt(
-    "weekly_study_coach",
+    "result_writer",
     {
-      title: "주간 학습 코치 프롬프트",
-      description: "주간 학습 가능 시간에 맞춘 실행 계획을 요청하는 프롬프트입니다.",
+      title: "결과 카드 작성 프롬프트",
+      description: "매칭된 조선시대 직업 결과를 재미있고 설득력 있게 작성하는 프롬프트입니다.",
       argsSchema: {
-        availableHours: z.string().default("10"),
-        stressLevel: z.enum(["low", "medium", "high"]).default("medium")
+        roleName: z.string(),
+        reason: z.string().default("성향 키워드가 잘 맞습니다.")
       }
     },
-    async ({ availableHours, stressLevel }) => ({
+    async ({ roleName, reason }) => ({
       messages: [
         {
           role: "user",
           content: {
             type: "text",
-            text: `이번 주 학습 가능 시간은 ${availableHours}시간이고 피로도는 ${stressLevel}입니다. 마감이 가까운 과제를 먼저 끝내되, 무리하지 않는 일정표와 하루별 목표를 만들어 주세요.`
+            text: `사용자의 조선시대 매칭 결과는 ${roleName}입니다. 이유는 "${reason}"입니다. 결과 제목, 한 줄 해설, 강점 3개, 현대식 조언 1개를 재미있게 작성해 주세요.`
           }
         }
       ]

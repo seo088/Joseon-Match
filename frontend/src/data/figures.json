@@ -49,7 +49,7 @@
     "id": "jeong-dojeon",
     "name": "정도전",
     "role": "개혁 설계자",
-    "image": "/images/figures/jeong-dojeon.webp",
+    "image": "/images/figures/jeong-dojeon.png",
     "traits": {
       "curiosity": 8,
       "justice": 6,
@@ -95,7 +95,7 @@
     "id": "hwang-hui",
     "name": "황희",
     "role": "명재상",
-    "image": "/images/figures/hwang-hui.webp",
+    "image": "/images/figures/hwang-hui.png",
     "traits": {
       "curiosity": 6,
       "justice": 8,
@@ -118,7 +118,7 @@
     "id": "heo-jun",
     "name": "허준",
     "role": "의관",
-    "image": "/images/figures/heo-jun.webp",
+    "image": "/images/figures/heo-jun.png",
     "traits": {
       "curiosity": 9,
       "justice": 7,
@@ -141,7 +141,7 @@
     "id": "shin-saimdang",
     "name": "신사임당",
     "role": "예술가",
-    "image": "/images/figures/shin-saimdang.webp",
+    "image": "/images/figures/shin-saimdang.png",
     "traits": {
       "curiosity": 7,
       "justice": 4,
@@ -164,7 +164,7 @@
     "id": "yi-hwang",
     "name": "이황",
     "role": "성리학자",
-    "image": "/images/figures/yi-hwang.webp",
+    "image": "/images/figures/yi-hwang.png",
     "traits": {
       "curiosity": 10,
       "justice": 8,

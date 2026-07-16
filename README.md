@@ -61,3 +61,13 @@ MCP 서버는 stdio 기반으로 실행됩니다. Codex, Claude Desktop, MCP Ins
 6. `find_matching_figure`로 16개 결과 중 최적 인물 선택
 7. `generate_result`로 결과 카드 생성
 8. 인물 이미지, 설명, 강점, 성향 그래프 표시
+
+## Vercel 배포
+
+이 프로젝트는 루트의 `vercel.json`을 기준으로 Vercel에 배포할 수 있습니다.
+
+- Install Command: `cd frontend && npm ci`
+- Build Command: `cd frontend && npm run build`
+- Output Directory: `frontend/dist`
+
+React Router 새로고침 접근을 지원하기 위해 모든 경로는 `/index.html`로 rewrite됩니다.

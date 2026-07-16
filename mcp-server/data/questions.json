@@ -1,0 +1,29 @@
+[
+  {
+    "id": "q1",
+    "text": "새로운 문제가 생겼을 때 가장 먼저 하는 행동은?",
+    "choices": [
+      { "id": "a", "label": "원인을 분석하고 구조를 파악한다", "traits": { "analysis": 2 } },
+      { "id": "b", "label": "사람들과 이야기하며 해법을 모은다", "traits": { "communication": 2 } },
+      { "id": "c", "label": "직접 만들어 보고 고친다", "traits": { "creativity": 2 } }
+    ]
+  },
+  {
+    "id": "q2",
+    "text": "가장 끌리는 역할은?",
+    "choices": [
+      { "id": "a", "label": "정책과 제도를 설계하는 사람", "traits": { "leadership": 2, "analysis": 1 } },
+      { "id": "b", "label": "현장에서 사람을 설득하는 사람", "traits": { "communication": 2 } },
+      { "id": "c", "label": "기술과 도구를 개선하는 사람", "traits": { "creativity": 2 } }
+    ]
+  },
+  {
+    "id": "q3",
+    "text": "친구들이 자주 하는 평가는?",
+    "choices": [
+      { "id": "a", "label": "침착하고 책임감이 강하다", "traits": { "leadership": 2 } },
+      { "id": "b", "label": "말을 재미있게 잘한다", "traits": { "communication": 2 } },
+      { "id": "c", "label": "작은 차이를 잘 관찰한다", "traits": { "analysis": 1, "creativity": 1 } }
+    ]
+  }
+]

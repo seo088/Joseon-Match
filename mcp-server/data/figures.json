@@ -1,0 +1,26 @@
+[
+  {
+    "id": "jang-yeongsil",
+    "name": "장영실",
+    "type": "발명가",
+    "image": "/images/figures/jang-yeongsil.webp",
+    "traits": { "analysis": 4, "communication": 2, "creativity": 5, "leadership": 2, "care": 2 },
+    "description": "문제를 손으로 풀어내고 도구로 증명하는 실험가형 인물입니다."
+  },
+  {
+    "id": "jeong-yakyong",
+    "name": "정약용",
+    "type": "실학자",
+    "image": "/images/figures/jeong-yakyong.webp",
+    "traits": { "analysis": 5, "communication": 3, "creativity": 4, "leadership": 3, "care": 4 },
+    "description": "현실 문제를 깊이 관찰하고 제도로 풀어내는 개혁가형 인물입니다."
+  },
+  {
+    "id": "storyteller",
+    "name": "전기수",
+    "type": "이야기꾼",
+    "image": "/images/figures/storyteller.webp",
+    "traits": { "analysis": 2, "communication": 5, "creativity": 4, "leadership": 2, "care": 3 },
+    "description": "사람의 마음을 움직이는 말과 장면을 가진 표현가형 직업군입니다."
+  }
+]

@@ -1,0 +1,173 @@
+:root {
+  color: #221812;
+  background: #f7f1e5;
+  font-family: Inter, Pretendard, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 32px;
+}
+
+.main-layout,
+.test-layout,
+.result-layout {
+  width: min(980px, 100%);
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  min-height: calc(100vh - 64px);
+  align-content: center;
+  gap: 28px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(42px, 8vw, 92px);
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+.hero p {
+  max-width: 620px;
+  margin: 0;
+  color: #5a4636;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.primary-button,
+.choice-button {
+  border: 1px solid #2f2118;
+  background: #2f2118;
+  color: #fff8ed;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.primary-button {
+  width: fit-content;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.primary-button:hover,
+.choice-button:hover {
+  transform: translateY(-1px);
+}
+
+.question-card,
+.result-card {
+  border: 1px solid #d3c4ac;
+  border-radius: 8px;
+  background: #fffaf1;
+  padding: 28px;
+}
+
+.question-card h2,
+.result-card h2 {
+  margin: 0 0 16px;
+  font-size: 28px;
+  letter-spacing: 0;
+}
+
+.choice-list {
+  display: grid;
+  gap: 12px;
+}
+
+.choice-button {
+  width: 100%;
+  min-height: 56px;
+  border-radius: 8px;
+  padding: 14px 16px;
+  text-align: left;
+  background: #fffaf1;
+  color: #2f2118;
+}
+
+.choice-button.selected {
+  background: #2f2118;
+  color: #fff8ed;
+}
+
+.progress {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e4d6bf;
+  margin: 0 0 24px;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  background: #8d2f1d;
+}
+
+.test-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.trait-chart {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.trait-row {
+  display: grid;
+  grid-template-columns: 88px 1fr 44px;
+  gap: 10px;
+  align-items: center;
+}
+
+.trait-bar {
+  height: 10px;
+  border-radius: 999px;
+  background: #e4d6bf;
+  overflow: hidden;
+}
+
+.trait-bar span {
+  display: block;
+  height: 100%;
+  background: #315f56;
+}
+
+.result-image {
+  display: grid;
+  width: 160px;
+  height: 160px;
+  place-items: center;
+  border-radius: 8px;
+  background: #ead8b9;
+  color: #6a3826;
+  font-size: 44px;
+  font-weight: 800;
+}
+
+.loading {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  color: #5a4636;
+  font-size: 22px;
+}

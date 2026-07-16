@@ -1,7 +1,13 @@
 node_modules/
-npm-debug.log*
+frontend/node_modules/
+frontend/dist/
+__pycache__/
+*.pyc
+.venv/
+venv/
 .env
+mcp-server/.env
+npm-debug.log*
 .DS_Store
-dist/
 coverage/
 *.log

@@ -1,55 +1,50 @@
-# 현대판 조선시대 직업/관상 테스트 MCP
+# Joseon Match
 
-Codex를 이용해 생성하는 MCP 프로젝트입니다. 사용자의 고민, 관심사, 성향 문장을 입력받아 “과거 조선시대였다면 어떤 인물 또는 직업군에 가까웠을지” 매칭하는 테스트 서비스를 목표로 합니다.
+현대 사용자의 성향과 고민을 입력받아 “조선시대였다면 어떤 인물 또는 직업군에 가까웠을지” 매칭하는 MCP 기반 성향 테스트 프로젝트입니다.
 
-## 현재 단계
+## 프로젝트 구조
 
-환경 세팅 단계입니다. MCP 서버 실행, Harness 검증, 기본 Tool/Resource/Prompt 등록 골격을 준비했습니다.
-
-## 프로젝트 방향
-
-- 입력: 사용자의 고민 또는 성향 문장
-- 분석: 키워드 추출, 성향 분류, 조선시대 직업군 데이터와 매칭
-- 결과: “당신은 저잣거리 최고의 전기수 자질이 있군요!”처럼 재미있는 결과 카드 생성
-- 데이터 후보: 공공데이터포털 한국학중앙연구원 인물 정보, 조선시대 직업군 설명 데이터, 크롤링 기반 보조 데이터
-- 기술 요소: MCP Tool, MCP Resource, MCP Prompt, Harness 기반 검증
+- `frontend/`: 사용자 웹앱
+- `mcp-server/`: MCP Tool, Resource, Prompt 서버
+- `docs/`: 설계, 점수 산정, MCP 명세 문서
 
 ## 실행 방법
 
+### Frontend
+
 ```bash
+cd frontend
 npm install
-npm start
+npm run dev
 ```
 
-서버는 stdio 기반 MCP 서버이므로 일반 터미널에서 `npm start` 실행 시 입력을 기다립니다. 실제 동작 확인은 Harness를 사용합니다.
+### MCP Server
 
 ```bash
-npm test
+cd mcp-server
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python server.py
 ```
 
-성공 시 다음 메시지가 출력됩니다.
+MCP 서버는 stdio 기반으로 실행됩니다. Codex, Claude Desktop, MCP Inspector 같은 MCP 클라이언트에서 연결해 Tool, Resource, Prompt를 호출할 수 있습니다.
 
-```text
-조선시대 직업 테스트 MCP 환경 검증 통과
-```
-
-## 준비된 MCP 항목
+## MCP 항목
 
 - Tools
-  - `analyze_user_profile`: 사용자 입력 분석 골격
-  - `match_joseon_role`: 조선시대 직업 매칭 골격
-  - `generate_questionnaire`: 간단 검사지 생성 골격
+  - `get_questions`: 검사 문항 조회
+  - `calculate_scores`: 응답 기반 성향 점수 계산
+  - `find_matching_figure`: 점수 기반 조선 인물/직업군 매칭
+  - `generate_result`: 결과 카드 생성
 - Resources
-  - `joseon://project-plan`: 프로젝트 구현 계획
-  - `joseon://role-seed`: 초기 직업군 샘플 데이터
+  - `joseon://questions`
+  - `joseon://figures`
+  - `joseon://traits`
 - Prompts
-  - `profile_interview`: 성향 인터뷰 프롬프트
-  - `result_writer`: 결과 카드 작성 프롬프트
+  - `profile_interview`
+  - `result_writer`
 
-## 다음 구현 단계
+## 현재 상태
 
-1. 조선시대 직업군 데이터 구조 확정
-2. 사용자 문장 키워드 추출 로직 구현
-3. 키워드와 직업군 traits 사이의 점수 기반 매칭 구현
-4. 검사지 생성 및 응답 기반 매칭 구현
-5. 결과 카드 생성 형식 고도화
+요청한 디렉터리 구조를 기준으로 프론트엔드와 MCP 서버 실행 골격을 구성했습니다. 다음 단계에서 실제 공공데이터 또는 크롤링 데이터 확장, 이미지 자산 추가, MCP Harness 검증을 강화합니다.

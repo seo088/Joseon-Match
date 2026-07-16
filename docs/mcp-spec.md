@@ -13,6 +13,12 @@
 - `joseon://figures`: 인물/직업군 JSON
 - `joseon://traits`: trait 설명 JSON
 
+기준 데이터 규모:
+
+- 질문: 15개
+- 성향: 8개
+- 결과 후보: 16개
+
 ## Prompts
 
 - `profile_interview`: 사용자 성향 질문 생성을 요청합니다.

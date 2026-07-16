@@ -1,0 +1,122 @@
+[
+  {
+    "id": "q01",
+    "text": "처음 보는 마을에 도착했다. 가장 먼저 마음이 가는 곳은?",
+    "choices": [
+      { "id": "a", "label": "오래된 비석과 기록이 모인 서고", "scores": { "curiosity": 3, "practicality": 1 } },
+      { "id": "b", "label": "사람들이 북적이는 장터와 이야기판", "scores": { "empathy": 2, "adventure": 2 } }
+    ]
+  },
+  {
+    "id": "q02",
+    "text": "억울한 일을 당한 사람이 도움을 청한다면?",
+    "choices": [
+      { "id": "a", "label": "사실관계를 차분히 따져 바로잡을 방법을 찾는다", "scores": { "justice": 3, "honor": 1 } },
+      { "id": "b", "label": "먼저 마음을 달래고 곁에 있어 준다", "scores": { "empathy": 3, "justice": 1 } }
+    ]
+  },
+  {
+    "id": "q03",
+    "text": "새로운 길을 떠날 기회가 생겼다.",
+    "choices": [
+      { "id": "a", "label": "위험해도 직접 가 보고 배운다", "scores": { "adventure": 3, "curiosity": 1 } },
+      { "id": "b", "label": "준비물을 챙기고 동선을 꼼꼼히 세운다", "scores": { "practicality": 3, "honor": 1 } }
+    ]
+  },
+  {
+    "id": "q04",
+    "text": "낡은 도구가 자꾸 고장 난다.",
+    "choices": [
+      { "id": "a", "label": "새 방식으로 고쳐 쓸 방법을 떠올린다", "scores": { "creativity": 3, "curiosity": 1 } },
+      { "id": "b", "label": "가장 안정적인 수리법을 찾아 적용한다", "scores": { "practicality": 3, "honor": 1 } }
+    ]
+  },
+  {
+    "id": "q05",
+    "text": "여러 사람이 의견을 내며 갈등한다.",
+    "choices": [
+      { "id": "a", "label": "흐름을 정리하고 결정을 이끈다", "scores": { "power": 3, "practicality": 1 } },
+      { "id": "b", "label": "각자의 말을 듣고 공통점을 찾는다", "scores": { "empathy": 3, "justice": 1 } }
+    ]
+  },
+  {
+    "id": "q06",
+    "text": "큰일을 맡게 되었다. 가장 중요하게 여기는 것은?",
+    "choices": [
+      { "id": "a", "label": "이름에 부끄럽지 않게 끝까지 책임지는 것", "scores": { "honor": 3, "justice": 1 } },
+      { "id": "b", "label": "결과가 실제로 도움이 되는 것", "scores": { "practicality": 3, "empathy": 1 } }
+    ]
+  },
+  {
+    "id": "q07",
+    "text": "밤새 몰두할 수 있는 일에 더 가까운 것은?",
+    "choices": [
+      { "id": "a", "label": "알 수 없던 원리를 끝까지 파헤치는 일", "scores": { "curiosity": 3, "creativity": 1 } },
+      { "id": "b", "label": "사람들의 마음을 움직이는 글이나 말을 다듬는 일", "scores": { "creativity": 2, "empathy": 2 } }
+    ]
+  },
+  {
+    "id": "q08",
+    "text": "갑작스러운 위기 상황에서 당신은?",
+    "choices": [
+      { "id": "a", "label": "앞에 서서 방향을 정하고 사람들을 움직인다", "scores": { "power": 2, "honor": 2 } },
+      { "id": "b", "label": "현장을 살피며 당장 필요한 일을 처리한다", "scores": { "practicality": 3, "justice": 1 } }
+    ]
+  },
+  {
+    "id": "q09",
+    "text": "새 제도를 만들 수 있다면 먼저 바꾸고 싶은 것은?",
+    "choices": [
+      { "id": "a", "label": "불공평한 절차와 낡은 관습", "scores": { "justice": 3, "power": 1 } },
+      { "id": "b", "label": "백성이 실제로 불편해하는 생활 문제", "scores": { "empathy": 2, "practicality": 2 } }
+    ]
+  },
+  {
+    "id": "q10",
+    "text": "당신의 재능이 기록된다면 어떤 모습이면 좋겠는가?",
+    "choices": [
+      { "id": "a", "label": "후대가 기억할 당당한 이름과 업적", "scores": { "honor": 3, "power": 1 } },
+      { "id": "b", "label": "누군가의 삶을 조용히 바꾼 쓸모", "scores": { "empathy": 2, "practicality": 2 } }
+    ]
+  },
+  {
+    "id": "q11",
+    "text": "아무도 해 보지 않은 일을 제안받았다.",
+    "choices": [
+      { "id": "a", "label": "새로운 판을 열 기회라 생각한다", "scores": { "adventure": 3, "creativity": 1 } },
+      { "id": "b", "label": "성공 가능성과 필요한 자원을 먼저 따진다", "scores": { "practicality": 3, "power": 1 } }
+    ]
+  },
+  {
+    "id": "q12",
+    "text": "가장 견디기 어려운 상황은?",
+    "choices": [
+      { "id": "a", "label": "틀린 것을 알면서도 침묵해야 하는 상황", "scores": { "justice": 3, "honor": 1 } },
+      { "id": "b", "label": "상상한 것을 펼칠 수 없는 답답한 상황", "scores": { "creativity": 3, "adventure": 1 } }
+    ]
+  },
+  {
+    "id": "q13",
+    "text": "사람들이 당신에게 자주 부탁하는 일은?",
+    "choices": [
+      { "id": "a", "label": "복잡한 일을 정리하고 판단해 달라는 부탁", "scores": { "curiosity": 2, "practicality": 2 } },
+      { "id": "b", "label": "속마음을 들어 달라는 부탁", "scores": { "empathy": 3, "honor": 1 } }
+    ]
+  },
+  {
+    "id": "q14",
+    "text": "좋은 리더란 어떤 사람에 가까운가?",
+    "choices": [
+      { "id": "a", "label": "흔들리지 않고 결단하는 사람", "scores": { "power": 3, "honor": 1 } },
+      { "id": "b", "label": "낮은 곳의 사정을 놓치지 않는 사람", "scores": { "empathy": 2, "justice": 2 } }
+    ]
+  },
+  {
+    "id": "q15",
+    "text": "마지막 시험지에 한 문장을 남긴다면?",
+    "choices": [
+      { "id": "a", "label": "알고 싶어서 끝까지 걸었다", "scores": { "curiosity": 2, "adventure": 2 } },
+      { "id": "b", "label": "부끄럽지 않게 쓰임을 다했다", "scores": { "honor": 2, "practicality": 2 } }
+    ]
+  }
+]

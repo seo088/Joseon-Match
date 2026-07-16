@@ -1,8 +1,9 @@
 from resources.question_resource import load_questions
+from resources.trait_resource import load_traits
 
 
 def calculate_scores_impl(answers: dict[str, str]) -> dict[str, int]:
-    scores = {"analysis": 0, "communication": 0, "creativity": 0, "leadership": 0, "care": 0}
+    scores = {trait["id"]: 0 for trait in load_traits()}
 
     for question in load_questions():
         choice_id = answers.get(question["id"])
@@ -10,7 +11,7 @@ def calculate_scores_impl(answers: dict[str, str]) -> dict[str, int]:
         if not choice:
             continue
 
-        for trait, value in choice["traits"].items():
+        for trait, value in choice["scores"].items():
             scores[trait] = scores.get(trait, 0) + int(value)
 
     return scores

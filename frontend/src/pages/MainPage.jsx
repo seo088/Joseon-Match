@@ -1,16 +1,20 @@
-import { Sparkles } from "lucide-react";
+import { Brush, ScrollText } from "lucide-react";
 
 export default function MainPage({ onStart }) {
   return (
     <main className="app-shell">
-      <section className="main-layout hero">
-        <h1>Joseon Match</h1>
+      <section className="main-layout paper hero">
+        <div className="seal">試</div>
+        <p className="eyebrow">
+          <ScrollText size={16} /> 조선 성향 문답지
+        </p>
+        <h1>당신이 조선시대에 태어났다면?</h1>
         <p>
-          지금의 고민과 성향을 조선시대 인물과 직업군에 비춰 봅니다. 당신은 장영실형 발명가일까요,
-          저잣거리의 전기수일까요?
+          열다섯 장의 짧은 문답을 지나면, 당신의 숨은 결을 닮은 조선시대 인물과 직업이 붉은 인장처럼
+          찍혀 나옵니다.
         </p>
         <button className="primary-button" onClick={onStart} type="button">
-          <Sparkles size={18} /> 테스트 시작
+          <Brush size={18} /> 답안지 펼치기
         </button>
       </section>
     </main>

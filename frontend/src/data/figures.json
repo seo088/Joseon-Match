@@ -187,7 +187,7 @@
     "id": "kim-jeongho",
     "name": "김정호",
     "role": "지도 제작자",
-    "image": "/images/figures/kim-jeongho.webp",
+    "image": "/images/figures/kim-jeongho.png",
     "traits": {
       "curiosity": 10,
       "justice": 4,
@@ -210,7 +210,7 @@
     "id": "im-sangok",
     "name": "임상옥",
     "role": "상인",
-    "image": "/images/figures/im-sangok.webp",
+    "image": "/images/figures/im-sangok.png",
     "traits": {
       "curiosity": 7,
       "justice": 5,
@@ -233,7 +233,7 @@
     "id": "storyteller",
     "name": "전기수",
     "role": "이야기꾼",
-    "image": "/images/figures/storyteller.webp",
+    "image": "/images/figures/storyteller.png",
     "traits": {
       "curiosity": 7,
       "justice": 4,
@@ -256,7 +256,7 @@
     "id": "historian",
     "name": "사관",
     "role": "기록관",
-    "image": "/images/figures/historian.webp",
+    "image": "/images/figures/historian.png",
     "traits": {
       "curiosity": 8,
       "justice": 10,
@@ -279,7 +279,7 @@
     "id": "teacher",
     "name": "훈장",
     "role": "마을 선생",
-    "image": "/images/figures/teacher.webp",
+    "image": "/images/figures/teacher.png",
     "traits": {
       "curiosity": 7,
       "justice": 7,
@@ -302,7 +302,7 @@
     "id": "interpreter",
     "name": "역관",
     "role": "통역관",
-    "image": "/images/figures/interpreter.webp",
+    "image": "/images/figures/interpreter.png",
     "traits": {
       "curiosity": 9,
       "justice": 4,
@@ -325,7 +325,7 @@
     "id": "inspector",
     "name": "암행어사",
     "role": "감찰관",
-    "image": "/images/figures/inspector.webp",
+    "image": "/images/figures/inspector.png",
     "traits": {
       "curiosity": 8,
       "justice": 10,
@@ -348,7 +348,7 @@
     "id": "local-officer",
     "name": "목민관",
     "role": "지방관",
-    "image": "/images/figures/local-officer.webp",
+    "image": "/images/figures/local-officer.png",
     "traits": {
       "curiosity": 4,
       "justice": 6,

@@ -145,6 +145,26 @@ button {
   padding: clamp(10px, 3vw, 24px);
 }
 
+.situation-box {
+  margin-bottom: 20px;
+  border-left: 4px solid #9d2f22;
+  padding: 12px 14px;
+  background: rgba(255, 242, 210, 0.72);
+}
+
+.situation-box span {
+  display: block;
+  margin-bottom: 6px;
+  color: #9d2f22;
+  font-weight: 900;
+}
+
+.situation-box p {
+  margin: 0;
+  color: #4c3424;
+  line-height: 1.7;
+}
+
 .question-card h2 {
   margin: 0 0 24px;
   font-family: "Nanum Myeongjo", Georgia, serif;

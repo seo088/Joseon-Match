@@ -1,17 +1,137 @@
 [
-  { "id": "q01", "text": "처음 보는 마을에 도착했다. 가장 먼저 마음이 가는 곳은?", "choices": [{ "id": "a", "label": "오래된 비석과 기록이 모인 서고", "scores": { "curiosity": 3, "practicality": 1 } }, { "id": "b", "label": "사람들이 북적이는 장터와 이야기판", "scores": { "empathy": 2, "adventure": 2 } }] },
-  { "id": "q02", "text": "억울한 일을 당한 사람이 도움을 청한다면?", "choices": [{ "id": "a", "label": "사실관계를 차분히 따져 바로잡을 방법을 찾는다", "scores": { "justice": 3, "honor": 1 } }, { "id": "b", "label": "먼저 마음을 달래고 곁에 있어 준다", "scores": { "empathy": 3, "justice": 1 } }] },
-  { "id": "q03", "text": "새로운 길을 떠날 기회가 생겼다.", "choices": [{ "id": "a", "label": "위험해도 직접 가 보고 배운다", "scores": { "adventure": 3, "curiosity": 1 } }, { "id": "b", "label": "준비물을 챙기고 동선을 꼼꼼히 세운다", "scores": { "practicality": 3, "honor": 1 } }] },
-  { "id": "q04", "text": "낡은 도구가 자꾸 고장 난다.", "choices": [{ "id": "a", "label": "새 방식으로 고쳐 쓸 방법을 떠올린다", "scores": { "creativity": 3, "curiosity": 1 } }, { "id": "b", "label": "가장 안정적인 수리법을 찾아 적용한다", "scores": { "practicality": 3, "honor": 1 } }] },
-  { "id": "q05", "text": "여러 사람이 의견을 내며 갈등한다.", "choices": [{ "id": "a", "label": "흐름을 정리하고 결정을 이끈다", "scores": { "power": 3, "practicality": 1 } }, { "id": "b", "label": "각자의 말을 듣고 공통점을 찾는다", "scores": { "empathy": 3, "justice": 1 } }] },
-  { "id": "q06", "text": "큰일을 맡게 되었다. 가장 중요하게 여기는 것은?", "choices": [{ "id": "a", "label": "이름에 부끄럽지 않게 끝까지 책임지는 것", "scores": { "honor": 3, "justice": 1 } }, { "id": "b", "label": "결과가 실제로 도움이 되는 것", "scores": { "practicality": 3, "empathy": 1 } }] },
-  { "id": "q07", "text": "밤새 몰두할 수 있는 일에 더 가까운 것은?", "choices": [{ "id": "a", "label": "알 수 없던 원리를 끝까지 파헤치는 일", "scores": { "curiosity": 3, "creativity": 1 } }, { "id": "b", "label": "사람들의 마음을 움직이는 글이나 말을 다듬는 일", "scores": { "creativity": 2, "empathy": 2 } }] },
-  { "id": "q08", "text": "갑작스러운 위기 상황에서 당신은?", "choices": [{ "id": "a", "label": "앞에 서서 방향을 정하고 사람들을 움직인다", "scores": { "power": 2, "honor": 2 } }, { "id": "b", "label": "현장을 살피며 당장 필요한 일을 처리한다", "scores": { "practicality": 3, "justice": 1 } }] },
-  { "id": "q09", "text": "새 제도를 만들 수 있다면 먼저 바꾸고 싶은 것은?", "choices": [{ "id": "a", "label": "불공평한 절차와 낡은 관습", "scores": { "justice": 3, "power": 1 } }, { "id": "b", "label": "백성이 실제로 불편해하는 생활 문제", "scores": { "empathy": 2, "practicality": 2 } }] },
-  { "id": "q10", "text": "당신의 재능이 기록된다면 어떤 모습이면 좋겠는가?", "choices": [{ "id": "a", "label": "후대가 기억할 당당한 이름과 업적", "scores": { "honor": 3, "power": 1 } }, { "id": "b", "label": "누군가의 삶을 조용히 바꾼 쓸모", "scores": { "empathy": 2, "practicality": 2 } }] },
-  { "id": "q11", "text": "아무도 해 보지 않은 일을 제안받았다.", "choices": [{ "id": "a", "label": "새로운 판을 열 기회라 생각한다", "scores": { "adventure": 3, "creativity": 1 } }, { "id": "b", "label": "성공 가능성과 필요한 자원을 먼저 따진다", "scores": { "practicality": 3, "power": 1 } }] },
-  { "id": "q12", "text": "가장 견디기 어려운 상황은?", "choices": [{ "id": "a", "label": "틀린 것을 알면서도 침묵해야 하는 상황", "scores": { "justice": 3, "honor": 1 } }, { "id": "b", "label": "상상한 것을 펼칠 수 없는 답답한 상황", "scores": { "creativity": 3, "adventure": 1 } }] },
-  { "id": "q13", "text": "사람들이 당신에게 자주 부탁하는 일은?", "choices": [{ "id": "a", "label": "복잡한 일을 정리하고 판단해 달라는 부탁", "scores": { "curiosity": 2, "practicality": 2 } }, { "id": "b", "label": "속마음을 들어 달라는 부탁", "scores": { "empathy": 3, "honor": 1 } }] },
-  { "id": "q14", "text": "좋은 리더란 어떤 사람에 가까운가?", "choices": [{ "id": "a", "label": "흔들리지 않고 결단하는 사람", "scores": { "power": 3, "honor": 1 } }, { "id": "b", "label": "낮은 곳의 사정을 놓치지 않는 사람", "scores": { "empathy": 2, "justice": 2 } }] },
-  { "id": "q15", "text": "마지막 시험지에 한 문장을 남긴다면?", "choices": [{ "id": "a", "label": "알고 싶어서 끝까지 걸었다", "scores": { "curiosity": 2, "adventure": 2 } }, { "id": "b", "label": "부끄럽지 않게 쓰임을 다했다", "scores": { "honor": 2, "practicality": 2 } }] }
+  {
+    "id": "q01",
+    "situation": "과거시험 하루 전, 실제 시험에 나올 가능성이 높은 문제를 우연히 입수했다.",
+    "text": "당신의 선택은?",
+    "choices": [
+      { "id": "a", "label": "보지 않고 지금까지 준비한 실력으로 시험을 치른다.", "scores": { "honor": 3, "justice": 2 } },
+      { "id": "b", "label": "출처를 확인한 뒤 시험 준비에 참고한다.", "scores": { "practicality": 3, "curiosity": 1 } }
+    ]
+  },
+  {
+    "id": "q02",
+    "situation": "새로운 농기구가 개발되었지만 마을 사람들은 대부분 사용을 꺼린다.",
+    "text": "당신의 선택은?",
+    "choices": [
+      { "id": "a", "label": "직접 사용해본 뒤 효과를 증명해 보인다.", "scores": { "creativity": 2, "curiosity": 2, "practicality": 1 } },
+      { "id": "b", "label": "기존 방식도 충분하니 굳이 바꿀 필요는 없다고 생각한다.", "scores": { "practicality": 2, "honor": 1 } }
+    ]
+  },
+  {
+    "id": "q03",
+    "situation": "왕이 내린 정책이 백성들에게 피해를 줄 것 같다는 사실을 알게 되었다.",
+    "text": "당신의 선택은?",
+    "choices": [
+      { "id": "a", "label": "불이익을 감수하고라도 의견을 올린다.", "scores": { "justice": 3, "honor": 2 } },
+      { "id": "b", "label": "더 확실한 근거가 모일 때까지 기다린다.", "scores": { "practicality": 2, "curiosity": 2 } }
+    ]
+  },
+  {
+    "id": "q04",
+    "situation": "지도에도 없는 산길 너머에 새로운 마을이 있다는 소문을 들었다.",
+    "text": "당신의 선택은?",
+    "choices": [
+      { "id": "a", "label": "직접 확인하러 떠난다.", "scores": { "adventure": 3, "curiosity": 2 } },
+      { "id": "b", "label": "다녀온 사람들의 이야기를 먼저 모아본다.", "scores": { "curiosity": 2, "practicality": 2 } }
+    ]
+  },
+  {
+    "id": "q05",
+    "situation": "전쟁이 시작되었다. 당신에게 후방의 안전한 직책과 최전선의 지휘관 자리가 동시에 제안되었다.",
+    "text": "당신의 선택은?",
+    "choices": [
+      { "id": "a", "label": "후방에서 물자와 정보를 관리한다.", "scores": { "practicality": 3, "power": 1 } },
+      { "id": "b", "label": "직접 최전선으로 나간다.", "scores": { "adventure": 2, "honor": 2, "power": 1 } }
+    ]
+  },
+  {
+    "id": "q06",
+    "situation": "시장에 나가 보니 같은 물건인데 가게마다 가격이 다르다.",
+    "text": "당신의 선택은?",
+    "choices": [
+      { "id": "a", "label": "왜 차이가 나는지 원인을 조사한다.", "scores": { "curiosity": 3, "practicality": 1 } },
+      { "id": "b", "label": "가장 이득이 되는 곳을 이용한다.", "scores": { "practicality": 3, "power": 1 } }
+    ]
+  },
+  {
+    "id": "q07",
+    "situation": "친한 친구가 억울한 누명을 쓰게 되었다.",
+    "text": "당신의 선택은?",
+    "choices": [
+      { "id": "a", "label": "진실을 밝히기 위해 직접 움직인다.", "scores": { "justice": 3, "empathy": 1, "adventure": 1 } },
+      { "id": "b", "label": "감정적으로 나서지 않고 증거부터 모은다.", "scores": { "curiosity": 2, "practicality": 2 } }
+    ]
+  },
+  {
+    "id": "q08",
+    "situation": "어려운 책 한 권과 사람들에게 인기 많은 책 열 권 중 하나를 고를 수 있다.",
+    "text": "당신의 선택은?",
+    "choices": [
+      { "id": "a", "label": "어려운 책 한 권을 선택한다.", "scores": { "curiosity": 3, "honor": 1 } },
+      { "id": "b", "label": "사람들이 많이 읽는 책 열 권을 선택한다.", "scores": { "empathy": 2, "practicality": 1, "creativity": 1 } }
+    ]
+  },
+  {
+    "id": "q09",
+    "situation": "당신의 업적으로 큰 상을 받을 기회가 생겼다.",
+    "text": "당신의 선택은?",
+    "choices": [
+      { "id": "a", "label": "상보다 실제 성과가 더 중요하다고 생각한다.", "scores": { "practicality": 3, "honor": 1 } },
+      { "id": "b", "label": "기회가 왔을 때 인정받는 것도 중요하다고 생각한다.", "scores": { "honor": 2, "power": 2 } }
+    ]
+  },
+  {
+    "id": "q10",
+    "situation": "새로운 발명품 아이디어가 떠올랐다.",
+    "text": "당신의 선택은?",
+    "choices": [
+      { "id": "a", "label": "실패하더라도 직접 만들어 본다.", "scores": { "creativity": 3, "adventure": 1, "curiosity": 1 } },
+      { "id": "b", "label": "먼저 주변 사람들의 의견을 들어본다.", "scores": { "empathy": 2, "practicality": 2 } }
+    ]
+  },
+  {
+    "id": "q11",
+    "situation": "왕이 해외 사절단을 모집한다. 몇 년 동안 고향으로 돌아오지 못할 수도 있다.",
+    "text": "당신의 선택은?",
+    "choices": [
+      { "id": "a", "label": "새로운 세상을 보기 위해 지원한다.", "scores": { "adventure": 3, "curiosity": 2 } },
+      { "id": "b", "label": "익숙한 곳에서 맡은 일을 이어간다.", "scores": { "practicality": 2, "honor": 2 } }
+    ]
+  },
+  {
+    "id": "q12",
+    "situation": "마을 아이들이 공부보다 놀이를 더 좋아한다.",
+    "text": "당신의 선택은?",
+    "choices": [
+      { "id": "a", "label": "흥미를 느낄 수 있는 새로운 방법을 찾는다.", "scores": { "creativity": 3, "empathy": 2 } },
+      { "id": "b", "label": "기본 규칙부터 철저히 익히게 한다.", "scores": { "honor": 2, "practicality": 2, "power": 1 } }
+    ]
+  },
+  {
+    "id": "q13",
+    "situation": "관청 문서에서 작은 오류를 발견했다. 아무도 눈치채지 못한 상태다.",
+    "text": "당신의 선택은?",
+    "choices": [
+      { "id": "a", "label": "번거롭더라도 바로 수정한다.", "scores": { "justice": 2, "honor": 2, "practicality": 1 } },
+      { "id": "b", "label": "큰 문제가 아니라면 그대로 둔다.", "scores": { "practicality": 2, "power": 1 } }
+    ]
+  },
+  {
+    "id": "q14",
+    "situation": "수많은 사람들 앞에서 자신의 생각을 발표할 기회가 생겼다.",
+    "text": "당신의 선택은?",
+    "choices": [
+      { "id": "a", "label": "영향력을 얻을 수 있으니 나선다.", "scores": { "power": 3, "honor": 1, "adventure": 1 } },
+      { "id": "b", "label": "꼭 내가 아니어도 된다면 다른 사람에게 양보한다.", "scores": { "empathy": 3, "honor": 1 } }
+    ]
+  },
+  {
+    "id": "q15",
+    "situation": "역사책에 이름을 남길 수 있는 길과 소중한 사람들과 평범하게 살아가는 길이 있다.",
+    "text": "당신의 선택은?",
+    "choices": [
+      { "id": "a", "label": "역사에 이름을 남기는 길을 선택한다.", "scores": { "honor": 3, "power": 2 } },
+      { "id": "b", "label": "평범하지만 소중한 삶을 선택한다.", "scores": { "empathy": 3, "practicality": 1 } }
+    ]
+  }
 ]

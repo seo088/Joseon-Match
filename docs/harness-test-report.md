@@ -25,7 +25,9 @@
 - 후보 랭킹 수: 16개
 - 샘플 매칭 결과: `local-officer`
 - 결과 데이터 필드: `title`, `figure`, `alternatives`, `scores`, `traitChartData`, `topTraits`, `strengths`, `description`, `advice`
+- 고도화 결과 필드: `topTraitDetails`, `lowTraits`, `combinationDescription`, `personalitySummary`, `personalizedStrengths`, `caution`, `workStyle`, `relationshipStyle`, `decisionStyle`, `modernAdvice`, `disclaimer`
 
 ## 비고
 
 `generate_result` 결과에 `traitChartData` 필드를 추가하여 결과 카드와 성향 그래프에 필요한 데이터를 명시적으로 검증할 수 있도록 개선했습니다.
+결과 페이지 고도화 작업 이후에는 상위/하위 성향, 성향 조합, 행동 방식, 강점, 주의점, 안내 문구까지 Harness에서 함께 검증합니다.

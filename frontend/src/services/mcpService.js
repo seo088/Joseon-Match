@@ -1,6 +1,7 @@
 import figures from "../data/figures.json";
 import questions from "../data/questions.json";
 import traits from "../data/traits.json";
+import { generatePersonalityResult } from "../utils/resultPersonality.js";
 
 const traitIds = traits.map((trait) => trait.id);
 
@@ -110,6 +111,7 @@ export function generateResult(matchResult, scores) {
     .sort((a, b) => b[1] - a[1])
     .slice(0, 3)
     .map(([id]) => traits.find((trait) => trait.id === id)?.name ?? id);
+  const personality = generatePersonalityResult({ scores, matchedFigure: figure });
 
   return {
     figure,
@@ -117,10 +119,21 @@ export function generateResult(matchResult, scores) {
     scores,
     traitChartData,
     topTraits,
+    topTraitDetails: personality.topTraits,
+    lowTraits: personality.lowTraits,
     title: `당신은 조선의 ${figure.name}형 ${figure.role}`,
     description: figure.summary,
+    combinationDescription: personality.combinationDescription,
+    personalitySummary: personality.personalitySummary,
     strengths: figure.strengths,
-    advice: figure.advice
+    personalizedStrengths: personality.personalizedStrengths,
+    caution: personality.caution,
+    workStyle: personality.workStyle,
+    relationshipStyle: personality.relationshipStyle,
+    decisionStyle: personality.decisionStyle,
+    advice: figure.advice,
+    modernAdvice: personality.modernAdvice,
+    disclaimer: personality.disclaimer
   };
 }
 

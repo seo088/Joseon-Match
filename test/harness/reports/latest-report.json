@@ -1,6 +1,6 @@
 {
   "harness": "Joseon Match MCP Flow Harness",
-  "generatedAt": "2026-07-16T13:21:21",
+  "generatedAt": "2026-07-16T13:45:20",
   "status": "PASS",
   "summary": {
     "totalChecks": 5,
@@ -56,9 +56,20 @@
       "scores",
       "traitChartData",
       "topTraits",
+      "topTraitDetails",
+      "lowTraits",
+      "combinationDescription",
+      "personalitySummary",
       "strengths",
+      "personalizedStrengths",
+      "caution",
+      "workStyle",
+      "relationshipStyle",
+      "decisionStyle",
       "description",
-      "advice"
+      "advice",
+      "modernAdvice",
+      "disclaimer"
     ]
   }
 }

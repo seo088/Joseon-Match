@@ -125,8 +125,19 @@ class JoseonMcpHarness:
             "description",
             "scores",
             "traitChartData",
+            "topTraitDetails",
+            "lowTraits",
+            "combinationDescription",
+            "personalitySummary",
             "topTraits",
             "strengths",
+            "personalizedStrengths",
+            "caution",
+            "workStyle",
+            "relationshipStyle",
+            "decisionStyle",
+            "modernAdvice",
+            "disclaimer",
             "advice",
         }
 
@@ -135,6 +146,11 @@ class JoseonMcpHarness:
         assert self.result["description"], "description must not be empty"
         assert self.result["figure"].get("image"), "figure image must be included"
         assert len(self.result["traitChartData"]) == 8, "trait chart data must contain 8 rows"
+        assert len(self.result["topTraitDetails"]) == 3, "top trait details must contain 3 rows"
+        assert len(self.result["lowTraits"]) >= 1, "low traits must contain at least 1 row"
+        assert len(self.result["personalitySummary"]) >= 4, "personality summary must contain at least 4 sentences"
+        assert len(self.result["personalizedStrengths"]) >= 3, "personalized strengths must contain at least 3 items"
+        assert "전문적인 심리검사나 진단" in self.result["disclaimer"], "disclaimer text is missing"
 
         image_path = FRONTEND_PUBLIC_DIR / self.result["figure"]["image"].lstrip("/")
         assert image_path.is_file(), f"result image file is missing: {image_path}"
@@ -155,6 +171,8 @@ class JoseonMcpHarness:
         assert len(scores) == 8, "flow score count mismatch"
         assert match_result["bestMatch"]["id"] == result["figure"]["id"], "flow result figure mismatch"
         assert result["traitChartData"], "flow chart data is empty"
+        assert result["personalitySummary"], "flow personality summary is empty"
+        assert result["workStyle"], "flow work style is empty"
 
         return f"questions -> answers -> scores -> {result['figure']['id']} -> result completed"
 

@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Chosun Centennial";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/ChosunCentennial.otf") format("opentype");
+  font-display: swap;
+}
+
 :root {
   color: #2b1b13;
   background:
@@ -122,7 +130,7 @@ button {
   max-width: 960px;
   margin: 0;
   color: #5b432b;
-  font-family: "Nanum Myeongjo", "Song Myung", Georgia, serif;
+  font-family: "Chosun Centennial", "Nanum Myeongjo", "Song Myung", Georgia, serif;
   font-size: clamp(42px, 9vw, 86px);
   font-weight: 900;
   letter-spacing: 0;
@@ -317,7 +325,7 @@ button {
 
 .question-card h2 {
   margin: 0 0 24px;
-  font-family: "Nanum Myeongjo", Georgia, serif;
+  font-family: "Chosun Centennial", "Nanum Myeongjo", Georgia, serif;
   font-size: clamp(24px, 4vw, 38px);
   line-height: 1.35;
   letter-spacing: 0;
@@ -411,7 +419,7 @@ button {
 
 .result-card h2 {
   margin: 8px 0 12px;
-  font-family: "Nanum Myeongjo", Georgia, serif;
+  font-family: "Chosun Centennial", "Nanum Myeongjo", Georgia, serif;
   font-size: clamp(28px, 5vw, 52px);
   line-height: 1.15;
   letter-spacing: 0;

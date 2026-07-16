@@ -3,7 +3,7 @@
     "id": "jang-yeongsil",
     "name": "장영실",
     "role": "발명가",
-    "image": "/images/figures/jang-yeongsil.webp",
+    "image": "/images/figures/jang-yeongsil.png",
     "traits": {
       "curiosity": 10,
       "justice": 4,
@@ -26,7 +26,7 @@
     "id": "jeong-yakyong",
     "name": "정약용",
     "role": "실학자",
-    "image": "/images/figures/jeong-yakyong.webp",
+    "image": "/images/figures/jeong-yakyong.png",
     "traits": {
       "curiosity": 9,
       "justice": 9,
@@ -72,7 +72,7 @@
     "id": "yi-sunsin",
     "name": "이순신",
     "role": "수군 지휘관",
-    "image": "/images/figures/yi-sunsin.webp",
+    "image": "/images/figures/yi-sunsin.png",
     "traits": {
       "curiosity": 5,
       "justice": 10,

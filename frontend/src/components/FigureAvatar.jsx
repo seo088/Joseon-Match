@@ -10,7 +10,7 @@ export default function FigureAvatar({ figureId = "default", image, label, size 
   const colors = palette[figureId] ?? palette.default;
 
   return (
-    <div className={`figure-avatar ${size}`}>
+    <div className={`figure-avatar ${size} ${image ? "has-image" : ""}`}>
       {image ? <img alt="" src={image} onError={(event) => event.currentTarget.remove()} /> : null}
       <svg aria-hidden="true" viewBox="0 0 160 160">
         <circle cx="80" cy="80" fill={colors[0]} r="78" />

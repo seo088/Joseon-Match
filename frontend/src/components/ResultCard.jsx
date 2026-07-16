@@ -1,3 +1,4 @@
+import FigureAvatar from "./FigureAvatar.jsx";
 import TraitChart from "./TraitChart.jsx";
 
 export default function ResultCard({ result }) {
@@ -6,12 +7,9 @@ export default function ResultCard({ result }) {
   return (
     <article className="result-card paper">
       <div className="result-top">
-        <div className="result-image">
-          <img alt="" src={result.figure.image} onError={(event) => event.currentTarget.remove()} />
-          <span>{initials}</span>
-        </div>
+        <FigureAvatar figureId={result.figure.id} image={result.figure.image} label={initials} size="result" />
         <div>
-          <p className="eyebrow">최종 방목 결과</p>
+          <p className="eyebrow">최종 매칭 결과</p>
           <h2>{result.title}</h2>
           <p>{result.description}</p>
         </div>

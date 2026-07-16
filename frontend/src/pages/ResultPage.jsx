@@ -12,6 +12,12 @@ function loadResult() {
 export default function ResultPage({ onRestart }) {
   const result = loadResult();
 
+  const goHome = () => {
+    window.localStorage.removeItem("joseon-match:answers");
+    window.localStorage.removeItem("joseon-match:result");
+    window.location.assign("/");
+  };
+
   if (!result) {
     return <Navigate replace to="/" />;
   }
@@ -23,6 +29,9 @@ export default function ResultPage({ onRestart }) {
         <div className="test-actions">
           <button className="primary-button" onClick={onRestart} type="button">
             다시 검사하기
+          </button>
+          <button className="secondary-button" onClick={goHome} type="button">
+            홈화면으로
           </button>
         </div>
       </section>

@@ -101,6 +101,11 @@ export function findMatchingFigure(userTraits) {
 
 export function generateResult(matchResult, scores) {
   const figure = matchResult.bestMatch ?? matchResult;
+  const traitChartData = traits.map((trait) => ({
+    id: trait.id,
+    name: trait.name,
+    score: scores[trait.id] ?? 0
+  }));
   const topTraits = Object.entries(scores)
     .sort((a, b) => b[1] - a[1])
     .slice(0, 3)
@@ -110,6 +115,7 @@ export function generateResult(matchResult, scores) {
     figure,
     alternatives: matchResult.alternatives ?? [],
     scores,
+    traitChartData,
     topTraits,
     title: `당신은 조선의 ${figure.name}형 ${figure.role}`,
     description: figure.summary,

@@ -1,0 +1,64 @@
+{
+  "harness": "Joseon Match MCP Flow Harness",
+  "generatedAt": "2026-07-16T12:10:48",
+  "status": "PASS",
+  "summary": {
+    "totalChecks": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "name": "get_questions returns 15 questions",
+      "status": "PASS",
+      "detail": "15 binary-choice questions loaded"
+    },
+    {
+      "name": "calculate_scores returns 8 trait scores",
+      "status": "PASS",
+      "detail": "8 normalized trait scores returned"
+    },
+    {
+      "name": "find_matching_figure returns one of 16 candidates",
+      "status": "PASS",
+      "detail": "best match local-officer selected from 16 candidates"
+    },
+    {
+      "name": "generate_result returns result card data",
+      "status": "PASS",
+      "detail": "result includes title, description, image, and trait chart data"
+    },
+    {
+      "name": "full MCP flow works end to end",
+      "status": "PASS",
+      "detail": "questions -> answers -> scores -> inspector -> result completed"
+    }
+  ],
+  "sample": {
+    "answerCount": 15,
+    "scoreKeys": [
+      "curiosity",
+      "justice",
+      "adventure",
+      "creativity",
+      "empathy",
+      "practicality",
+      "power",
+      "honor"
+    ],
+    "bestMatchId": "local-officer",
+    "bestMatchName": "목민관",
+    "rankingCount": 16,
+    "resultKeys": [
+      "title",
+      "figure",
+      "alternatives",
+      "scores",
+      "traitChartData",
+      "topTraits",
+      "strengths",
+      "description",
+      "advice"
+    ]
+  }
+}
